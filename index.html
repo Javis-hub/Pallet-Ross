@@ -1,1 +1,271 @@
-Testing the waters
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Pallet Ross Remake</title>
+</head>
+<body data-theme="light">
+        <header>
+            <a href="" class="logo">Pallet Ross</a>
+
+        
+
+            <div class="overlay" id="overlay"></div>
+
+            <div class="navflex">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="toggle-icon sun-icon">☀️</span>
+                    <span class="toggle-icon moon-icon" style="display: none;">🌙</span>
+                    <span class="toggle-text">Dark Mode</span>
+                </button>
+                
+                <button class="nav-toggle" id="navToggle">
+                    <svg class="hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="line line1" d="M3 6h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path class="line line2" d="M3 12h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path class="line line3" d="M3 18h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#get-started">Get Started</a></li>
+                    <li><a href="#create-strategy">Create Strategy</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#e-commerce">E-Commerce</a></li>
+                </ul>        
+            </nav>
+            </div>
+            
+        </header>
+
+        <main>
+            <div class="hero">
+                <h1>A place to display your <br> masterpiece</h1>
+
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide image-one">
+                            <div class="image ">
+                                <img src="/art 1 (1).jpg" alt="">
+                            </div>
+                        </div>
+                
+                        <div class="swiper-slide image-two">
+                            <div class="image">
+                                <img src="/art 2.jpg" alt="">
+                            </div>
+                        </div>
+                    
+                        <div class="swiper-slide image-three">
+                            <div class="image ">
+                                <img src="/art 3.jpg" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide image-four">
+                            <div class="image ">
+                                <img src="/art 4.jpg" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide image-five">
+                            <div class="image">
+                                <img src="/art 5.jpg" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide image-six">
+                            <div class="image ">
+                                <img src="/art 6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="herotext">
+                    <p>Artists can display their masterpieces and buyers can discover and</p>
+                    <p>purchase works that resonate with them.</p>
+
+                    <div class="herobuttons">
+                        <a href="" class="bttn1">Join for $9.99/m</a>
+                        <a href="" class="bttnmore">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase">
+                <h2>SELECTED WORK</h2>
+
+
+                <div class="showcaseimages">
+                    <div class="showcaseimage">
+                        <p>1/ Art by a</p>
+                        
+                        <div class="art art-1">
+                            <img src="/show1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="showcaseimage">
+                        <p>1/ Art by a</p>
+                        
+                        <div class="art art-2">
+                            <img src="/show2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="showcaseimage">
+                        <p>1/ Art by a</p>
+                        
+                        <div class="art art-3">
+                            <img src="/show3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="showcaseimage">
+                        <p>1/ Art by a</p>
+                        
+                        <div class="art art-4">
+                            <img src="/show4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="showcaseimage">
+                        <p>1/ Art by a</p>
+                        
+                        <div class="art art-5">
+                            <img src="/show5.png" alt="">
+                        </div>
+                    </div>
+                    <div class="showcaseimage">
+                        <p>1/ Art by a</p>
+                        
+                        <div class="art art-6">
+                            <img src="/show6.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+        const toggleText = document.querySelector('.toggle-text');
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+
+
+        function updateToggleButton(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'inline';
+                toggleText.textContent = 'Light';
+            } else {
+                sunIcon.style.display = 'inline';
+                moonIcon.style.display = 'none';
+                toggleText.textContent = 'Dark';
+            }
+        }
+
+        updateToggleButton(currentTheme);
+
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            updateToggleButton(newTheme);
+            
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    </script>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const overlay = document.getElementById('overlay');
+
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+            overlay.classList.toggle('open');
+        });
+
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', function() {
+            navToggle.classList.remove('open');
+            navMenu.classList.remove('open');
+            overlay.classList.remove('open');
+        });
+
+        // Close menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('open');
+                navMenu.classList.remove('open');
+                overlay.classList.remove('open');
+            });
+        });
+    </script>
+
+    <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navMenu = document.getElementById("nav-menu");
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      navMenu.classList.toggle("open", isOpen);
+      menuBtn.innerHTML = isOpen ? "<i class='bx bx-x'></i>" : "<i class='bx bx-menu'></i>";
+    });
+    
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        390: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        600: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 4,
+            spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 0,
+        },
+      },
+    });
+  </script>
+</body>
+</html>
