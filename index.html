@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="/style.css">
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-     <script src="https://unpkg.com/scrollreveal"></script>
+    
     <title>Pallet Ross Remake</title>
+
 </head>
 <body data-theme="light">
         <header>
@@ -102,13 +103,15 @@
                 </div>
             </div>
 
+
             <div class="showcase">
                 <h2>SELECTED WORK</h2>
 
+                <div class="overlay" id="overlay"></div>
 
                 <div class="showcaseimages">
-                    <div class="showcaseimage">
-                        <p>1/ Art by a</p>
+                    <div class="card showcaseimage" data-popup="popup1">
+                        <p>Art by Kofi Adebayo</p>
                         
                         <div class="art art-1">
                             <img src="/show1.png" alt="">
@@ -116,15 +119,15 @@
                     </div>
                     
                     <div class="showcaseimage1">
-                        <div class="showcase1">
-                            <p>1/ Art by a</p>
+                        <div class="card showcase1" data-popup="popup2">
+                            <p>Art by Elias Montrose</p>
                             
                             <div class="art art-2">
                                 <img src="/show2.png" alt="">
                             </div>
                         </div>
-                        <div class="showcase2">
-                            <p>1/ Art by a</p>
+                        <div class="card showcase2" data-popup="popup3">
+                            <p>Art by Luciana Verdi</p>
                             
                             <div class="art art-3">
                                 <img src="/show3.png" alt="">
@@ -132,29 +135,42 @@
                         </div>
                     </div>
 
-                    <div class="showcaseimage">
-                        <p>1/ Art by a</p>
-                        
-                        <div class="art art-4">
-                            <img src="/show4.png" alt="">
-                        </div>
+                </div>
+
+                <div class="showcaseimage2">
+                    <div class="card showcase3" data-popup="popup4">
+                        <p>Art by Sierra Nyx</p>
+                            
+                    <div class="art art-5">
+                        <img src="/show5.png" alt="">
                     </div>
                     
-                    <div class="showcaseimage1">
-                        <div class="showcase3">
-                            <p>1/ Art by a</p>
+                    </div>
+                
+                <div class="card showcase5" data-popup="popup5">
+                    <p>Art by Omar Farid</p>
+                        
+                    <div class="art art-4">
+                        <img src="/show4.png" alt="">
+                    </div>
+                </div>
+
+                <div class="card showcase4" data-popup="popup6">
+                    <p>Art by Isolde Marceau</p>
                             
-                            <div class="art art-5">
-                                <img src="/show5.png" alt="">
-                            </div>
-                        </div>
-                        <div class="showcase4">
-                            <p>1/ Art by a</p>
-                            
-                            <div class="art art-6">
-                                <img src="/show6.png" alt="">
-                            </div>
-                        </div>
+                    <div class="art art-6">
+                        <img src="/show6.png" alt="">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Popup Overlay -->
+            <div class="popup-overlay" id="popupOverlay">
+                <div class="popup" id="popup">
+                   <button class="popup-close" id="popupClose">&times;</button>
+                    <div id="popupContent">
+            <!-- Content will be dynamically inserted here -->
                     </div>
                 </div>
             </div>
@@ -162,6 +178,128 @@
 
         <script src="/script.js"></script>
 
+        <script>
+            const popupOverlay = document.getElementById('popupOverlay');
+            const popup = document.getElementById('popup');
+            const popupClose = document.getElementById('popupClose');
+            const popupContent = document.getElementById('popupContent');
+            const cards = document.querySelectorAll('.card');
+
+            const popupData = {
+            popup1: {
+                title: "Sunlit Laughter",
+                content: `
+                    <img src="/show1.png" alt="">
+                    <h2>Sunlit Laughter</h2>
+                    <p><strong>created by Kofi Adebayo</strong></p>
+                    <p>Sunlit Laughter captures a fleeting, joyful moment of four African children at play. Their bare feet kick up the warm, dusty earth as they run freely beneath a wide, golden sky. Each child is caught mid-motion, their laughter almost audible through the vibrant colors and textured brushstrokes. One child stretches out their arms in a leap of imagination, while another bends low, trying to dodge a playful grab, and the remaining two exchange mischievous glances, fully immersed in the game.
+                    The sunlight falls in dappled patterns across the scene, highlighting the rich tones of their skin and the bright, tattered clothing that tells stories of everyday life. In the background, hints of acacia trees and distant hills create a subtle sense of place, grounding the children in the African landscape without distracting from their energy.
+                    The painting’s composition is dynamic, with diagonal lines and flowing curves guiding the viewer’s eye across the children’s movements, emphasizing the spontaneity and boundless creativity of childhood. The dust rising from the ground mingles with rays of sunlight, creating a soft haze that adds warmth and depth, evoking both nostalgia and celebration.
+                    Through Sunlit Laughter, the artist not only portrays the exuberance of youthful play but also honors the resilience, imagination, and community inherent in childhood. The work resonates with universal joy, reminding viewers of the simple pleasures and freedom found in the everyday moments of life.</p>
+                `
+            },
+            popup2: {
+                title: "Silent Study",
+                content: `
+                    <img src="/show2.png" alt="">
+                    <h2>Silent Study</h2>
+                    <p><strong>Elias Montrose</strong></p>
+                    <p>In Silent Study, a man sits comfortably on a chair, one leg crossed over the other, absorbed in the world of a red-covered book. His face is deliberately hidden from view, inviting the viewer to imagine the expressions, thoughts, and emotions behind the moment. The chair becomes both a throne of contemplation and a grounding element in the composition, anchoring the scene in quiet introspection.
+                    The bold red cover of the book draws the eye immediately, contrasting with the subdued tones of the surroundings and emphasizing the power of knowledge, imagination, or perhaps secrecy. The posture of the man—relaxed yet attentive—speaks of focus, patience, and a meditative engagement with the written word.
+                    Shadows and light play subtly across the folds of his clothing and the curves of the chair, creating texture and depth that complement the mystery of the unseen face. The artwork captures the intimate solitude of reading, portraying a universal moment of escape, reflection, and personal growth without ever revealing identity</p>
+                `
+            },
+            popup3: {
+                title: "Harmonic Madonna",
+                content: `
+                    <img src="/show3.png" alt="">
+                    <h2>Harmonic Madonna</h2>
+                    <p><strong>created by uciana Verdi</strong></p>
+                    <p><strong>Shade 1 – Warm Serenity:</strong></p>
+                    <p>The first shade envelops Madonna’s robes in a soft, warm hue, almost like the gentle glow of sunrise on delicate silk. It gives her an aura of calm and grace, as if her very presence radiates quiet reassurance. The color feels almost tactile, inviting the viewer to imagine the smooth, flowing fabric under their fingers. This warmth extends subtly to her face, enhancing the serene expression that has captivated generations, making her appear approachable yet transcendent. Every brushstroke in this shade seems to breathe life into her figure, creating a comforting emotional resonance that anchors the entire composition.</p>
+                    <p><strong>Shade 2 – Whispered Shadows:</strong></p>
+                    <p>The second shade introduces gentle shadows that play across her features, sculpting the curves of her cheeks, the slope of her nose, and the softness of her eyes. These shadows give her an almost three-dimensional realism, emphasizing the quiet wisdom and depth in her gaze. The contrast created by this shade against the warmth of her robes makes her expression more poignant, hinting at the complexities and inner strength of her character. It is subtle yet deliberate, like a whispered secret hidden in the folds of her presence, inviting contemplation and reflection from anyone who observes her.</p>
+                    <p><strong>Shade 3 – Textured Background:</p>
+                    <p>The third shade transforms the background into a rich tapestry of depth and nuance. It is neither flat nor static; it moves gently behind her, suggesting an environment that is at once ethereal and tangible. The texture created by this shade gives the entire painting a sense of space, almost as if Madonna exists in a layered world where light and atmosphere interact with every brushstroke. The background’s subtle interplay with the figure draws the eye naturally to her, while also enriching the overall composition with a feeling of harmony and balance.</p>
+
+                    <p><strong>Shade 4 – Contoured Light and Dark</strong></p>
+                    <p>The fourth shade weaves through the folds of her robes, the contours of her hands, and the gentle drape of her veil, creating a delicate interplay of light and dark. It adds dimension and weight to her figure, making the painting feel almost sculptural. This shade emphasizes the tactile qualities of the artwork, as if the viewer could trace the curves of fabric and skin with their fingertips. It also highlights the emotional depth of the scene, drawing attention to the subtle gestures—the way her hands cradle the child, the slight tilt of her head—that convey both maternal tenderness and spiritual presence. The overall effect is a Madonna who is at once timeless and vividly alive, her figure made more compelling and emotionally resonant through the harmonious use of four textured shades.</p>
+                `
+            },
+            popup4: {
+                title: "Neon Whisper",
+                content: `
+                    <img src="/show5.png" alt="">
+                    <h2>Neon Whisper</h2>
+                    <p><strong>created by Sierra Nyx</strong></p>
+                    <p>
+                        Neon Whisper captures Billie Eilish in all her enigmatic allure. Her eyes, intense and thoughtful, seem to tell stories beyond the frame, while her signature style—perhaps oversized clothing, striking hair, or subtle neon accents—adds layers of personality and rebellion. The color palette plays with contrast: soft shadows on her face juxtaposed against vibrant highlights, evoking both vulnerability and boldness.
+
+                        The brushwork gives texture to her hair and skin, while abstract elements or subtle backgrounds hint at her musical world—dreamlike, edgy, and full of emotion. The portrait doesn’t just capture her likeness; it captures a mood, a presence, a whisper of the icon she has become. Viewers are drawn in, feeling both intimacy and distance, as if glimpsing a private moment frozen in color and form.
+                    </p>
+                `
+            },
+            popup5: {
+                title: "Whispers of the Dunes",
+                content: `
+                    <img src="/show4.png" alt="">
+                    <h2>Whispers of the Dunes</h2>
+                    <p><strong>Omar Farid</strong></p>
+                    <p>
+                        Whispers of the Dunes captures the vast, silent expanse of a desert under a golden sky. Rolling sand dunes stretch endlessly, their curves highlighted by the soft interplay of light and shadow, creating a sense of rhythm and movement. Each grain of sand seems to shimmer in the sunlight, while distant horizons fade into a hazy, almost dreamlike atmosphere.
+
+                        Sparse vegetation—perhaps a lone cactus or a windswept shrub—adds a touch of life, emphasizing both the harshness and beauty of the landscape. The colors range from warm ochres and deep ambers to subtle hints of rose and violet where the sun meets the earth, evoking both heat and serenity.
+
+                        The painting conveys a feeling of solitude and timelessness, inviting viewers to reflect on the quiet power of nature, the passage of time, and the stories hidden in the ever-shifting sands. It is a meditation on vastness, resilience, and the mysterious poetry of the desert.
+                    </p>
+                `
+            },
+            popup6: {
+                title: "Enigmatic Smoke",
+                content: `
+                    <img src="/show6.png" alt="">
+                    <h2>Enigmatic Smoke</h2>
+                    <p><strong>created by Isolde Marceau</strong></p>
+                    <p>Enigmatic Smoke reimagines the timeless Mona Lisa with a modern, rebellious twist—she holds a smoldering cigarette delicately between her fingers. Her signature enigmatic smile remains, but now it carries a hint of irony, mischief, and world-weariness. The curling wisps of smoke intertwine with the soft shadows of her face, adding movement and an almost cinematic atmosphere to the classical composition.
+                    The color palette balances the familiar earthy tones of Leonardo da Vinci’s original with subtle grays and silvers from the smoke, creating contrast and depth. Her eyes, still calm and captivating, now seem to hold stories of defiance and modernity, as if she is quietly challenging tradition while maintaining her timeless poise.
+
+                    Enigmatic Smoke is both homage and reinterpretation, blending Renaissance mastery with contemporary attitude, and inviting viewers to reconsider the familiar through a lens of audacity and subtle rebellion.</p>
+                    `
+            }
+        };
+
+        // Popup functionality
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const popupId = this.getAttribute('data-popup');
+                const data = popupData[popupId];
+                
+                if (data) {
+                    popupContent.innerHTML = data.content;
+                    popupOverlay.classList.add('open');
+                }
+            });
+        });
+
+        // Close popup functionality
+        function closePopup() {
+            popupOverlay.classList.remove('open');
+        }
+
+        popupClose.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popupOverlay.classList.contains('open')) {
+                closePopup();
+            }
+        });
+        </script>
 
     <script>
         const themeToggle = document.getElementById('themeToggle');
