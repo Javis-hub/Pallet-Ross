@@ -484,6 +484,7 @@ header{
     letter-spacing: 3px;
     font-weight: 400;
     color: var(--showcase-h2);
+    margin-bottom: 8px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -542,6 +543,10 @@ header{
     .herotext p{
     font-weight: 500;
     letter-spacing: 0;
+}
+
+.showcase h2{
+    font-size: 32px;
 }
 
 }
